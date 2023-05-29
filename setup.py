@@ -22,7 +22,7 @@ def read(*parts):
 
 # setup main
 # required modules
-install_requires = ["yamc_server>=1.1.0", "requests>=2.27.1", "setuptools_scm>=6.0.1"]
+install_requires = ["yamc_server>=2.0.0", "requests>=2.27.1", "setuptools_scm>=6.0.1"]
 
 setup(
     name="yamc-pushover",
