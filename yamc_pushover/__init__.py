@@ -3,4 +3,16 @@
 
 from .writers import PushoverWriter
 
-__version__ = "1.0.1"
+from importlib.metadata import version, PackageNotFoundError
+
+
+def __getattr__(name):
+    """
+    Return the version number of the package as a lazy attribute.
+    """
+    if name == "__version__":
+        try:
+            return version("yamc-pushover")
+        except PackageNotFoundError as e:
+            return "unknown"
+    raise AttributeError(f"module {__name__} has no attribute {name}")
