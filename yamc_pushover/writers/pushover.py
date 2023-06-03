@@ -22,6 +22,7 @@ class PushoverWriter(Writer):
         self._prev_hash = None
 
     def healthcheck(self):
+        super().healthcheck()
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             sock.connect((self.pushover_host, 443))
